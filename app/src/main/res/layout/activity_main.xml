@@ -15,7 +15,9 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:padding="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btn_region"
@@ -26,7 +28,7 @@
             android:backgroundTint="#00ff0000"
             android:drawableEnd="@drawable/tb_expandmore"
             android:padding="10dp"
-            android:text="반포2동"
+            android:text="@string/near_tb_name"
             android:textSize="17sp" />
 
         <View
@@ -56,88 +58,29 @@
 
     </LinearLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:paddingBottom="120dp"
-            app:layout_constraintTop_toBottomOf="@+id/topbar"
-            tools:layout_editor_absoluteX="37dp">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topbar" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:orientation="horizontal">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="#1C1C1C"
+        app:itemTextColor="#1C1C1C"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_navigation"
+        tools:layout_editor_absoluteX="-16dp">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:background="@drawable/iv_radius"
-                        android:padding="8dp"
-                        android:drawableStart="@drawable/img_menu"
-                        android:layout_marginEnd="8dp" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:background="@drawable/iv_radius"
-                        android:padding="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:drawableStart="@drawable/img_job"
-                        android:text="알바" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:background="@drawable/iv_radius"
-                        android:padding="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:drawableStart="@drawable/img_house"
-                        android:text="부동산" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:background="@drawable/iv_radius"
-                        android:padding="8dp"
-                        android:drawableStart="@drawable/img_car"
-                        android:text="중고차" />
-
-                </LinearLayout>
-
-              <RelativeLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
-
-                  <androidx.recyclerview.widget.RecyclerView
-                      android:id="@+id/product_recycle"
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent"/>
-
-              </RelativeLayout>
-
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-
-    <include
-        android:id="@+id/navigation"
-        layout="@layout/layout_bottom" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

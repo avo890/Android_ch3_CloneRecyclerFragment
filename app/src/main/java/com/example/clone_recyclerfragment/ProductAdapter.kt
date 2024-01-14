@@ -1,11 +1,17 @@
 package com.example.clone_recyclerfragment
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clone_recyclerfragment.databinding.LayoutItemBinding
 
 class ProductAdapter (val productItem: MutableList<ProductItem>) : RecyclerView.Adapter<ProductAdapter.Holder>() {
+
+    interface ProductClick {
+        fun onClick(view : View, position : Int)
+    }
+    var productClick : ProductClick? = null
 
 
     inner class Holder(val binding : LayoutItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -25,10 +31,14 @@ class ProductAdapter (val productItem: MutableList<ProductItem>) : RecyclerView.
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        holder.ivProduct.setImageResource(productItem[position].ivProduct)
-        holder.tvPrice.text = productItem[position].tvPrice
-        holder.tvTime.text = productItem[position].tvTime
-        holder.tvTitle.text = productItem[position].tvTitle
-        holder.tvLoca.text = productItem[position].tvLoca
+        holder.itemView.setOnClickListener{
+            productClick?.onClick(it,position)
+        }
+
+        holder.ivProduct.setImageResource(productItem[position].product)
+        holder.tvPrice.text = productItem[position].price
+        holder.tvTime.text = productItem[position].time
+        holder.tvTitle.text = productItem[position].title
+        holder.tvLoca.text = productItem[position].loca
     }
 }

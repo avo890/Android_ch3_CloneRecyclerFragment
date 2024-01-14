@@ -30,15 +30,16 @@
             android:id="@+id/tv_upload"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:text="거래글 작성"
-            android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginLeft="8dp"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:text="거래글 작성"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
 
         <Button
@@ -54,17 +55,27 @@
 
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/iv_upload"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_upload"
         android:layout_width="260dp"
         android:layout_height="238dp"
-        android:background="@drawable/iv_radius25"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toTopOf="@+id/et_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_search"
-        app:srcCompat="@drawable/img_image" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_search">
+
+        <ImageView
+            android:id="@+id/iv_upload"
+            android:layout_width="260dp"
+            android:layout_height="238dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/img_image" />
+
+
+    </androidx.cardview.widget.CardView>
+
 
     <EditText
         android:id="@+id/et_description"
@@ -75,7 +86,6 @@
         android:hint="상세 설명 등록"
         android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,15 @@
 package com.example.clone_recyclerfragment
 
-data class ProductItem(val ivProduct:Int, val tvPrice:String, val tvTime:String, val tvTitle:String, val tvLoca:String)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class ProductItem
+    (
+    val product: Int,
+    val price: String,
+    val time: String,
+    val title: String,
+    val loca: String,
+    val description: String
+) : Parcelable

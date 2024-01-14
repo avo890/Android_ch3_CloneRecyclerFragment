@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/navMenu_home"
         android:icon="@drawable/bn_home"
         android:title="홈" />
     <item
-        android:id="@+id/info"
+        android:id="@+id/navMenu_info"
         android:icon="@drawable/bn_info"
         android:title="동네상황" />
     <item
-        android:id="@+id/location"
+        android:id="@+id/navMenu_location"
         android:icon="@drawable/bn_location"
         android:title="내근처" />
     <item
-        android:id="@+id/chat"
+        android:id="@+id/navMenu_chat"
         android:icon="@drawable/bn_chat"
         android:title="채팅" />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/navMenu_rofile"
         android:icon="@drawable/bn_profile"
         android:title="나의당근"/>
 
